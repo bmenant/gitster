@@ -14,9 +14,9 @@ if (( ${+functions[git-info]} )); then
   zstyle ':zim:git-info:branch' format '%b'
   zstyle ':zim:git-info:commit' format '%c'
   zstyle ':zim:git-info:clean' format '%F{green}%{%G✓%}'
-  zstyle ':zim:git-info:dirty' format '%F{yellow}%{%G✗%}'
+  zstyle ':zim:git-info:dirty' format '%F{magenta}%{%G✗%}'
   zstyle ':zim:git-info:keys' format \
-      'prompt' ' %F{cyan}%b%c %C%D'
+      'prompt' ' %F{blue}%b%c %C%D'
 
   autoload -Uz add-zsh-hook && add-zsh-hook precmd git-info
 fi
