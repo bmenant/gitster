@@ -12,7 +12,7 @@ _prompt_gitster_pwd() {
   else
     current_dir="${PWD/#${HOME}/~}"
   fi
-  print -n "%F{white}${current_dir}"
+  print -n "%F{black}${current_dir}"
 }
 
 setopt nopromptbang promptcr promptpercent promptsp promptsubst
@@ -22,9 +22,9 @@ if (( ${+functions[git-info]} )); then
   zstyle ':zim:git-info:branch' format '%b'
   zstyle ':zim:git-info:commit' format '%c'
   zstyle ':zim:git-info:clean' format '%F{green}✓'
-  zstyle ':zim:git-info:dirty' format '%F{yellow}✗'
+  zstyle ':zim:git-info:dirty' format '%F{magenta}✗'
   zstyle ':zim:git-info:keys' format \
-      'prompt' ' %F{cyan}%b%c %C%D'
+      'prompt' ' %F{blue}%b%c %C%D'
 
   autoload -Uz add-zsh-hook && add-zsh-hook precmd git-info
 fi
