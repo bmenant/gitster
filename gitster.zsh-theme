@@ -10,12 +10,12 @@ _prompt_gitster_pwd() {
   if git_root=$(command git rev-parse --show-toplevel 2>/dev/null); then
     current_dir="${PWD#${git_root:h}/}"
   else
-    current_dir="${PWD/#${HOME}/~}"
+    current_dir=${(%):-%~}
   fi
   print -n "%F{black}${current_dir}"
 }
 
-setopt nopromptbang promptcr promptpercent promptsp promptsubst
+setopt nopromptbang prompt{cr,percent,sp,subst}
 
 typeset -gA git_info
 if (( ${+functions[git-info]} )); then
