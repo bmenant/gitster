@@ -15,12 +15,12 @@ typeset -gA git_info
 if (( ${+functions[git-info]} )); then
   zstyle ':zim:git-info:branch' format '%b'
   zstyle ':zim:git-info:commit' format '%c'
-  zstyle ':zim:git-info:clean' format '%F{green}%{%G=%}'
-  zstyle ':zim:git-info:ahead' format '%F{blue}%{%G+%}'
-  zstyle ':zim:git-info:dirty' format '%F{magenta}%{%G*%}'
-  zstyle ':zim:git-info:behind' format '%F{red}%{%G-%}'
+  zstyle ':zim:git-info:clean' format '%F{green}{%G=%}'
+  zstyle ':zim:git-info:dirty' format '%F{magenta}{%G*%}'
+  zstyle ':zim:git-info:ahead' format '%F{blue}{%G+%}'
+  zstyle ':zim:git-info:behind' format '%F{red}{%G-%}'
   zstyle ':zim:git-info:keys' format \
-      'prompt' ' %F{blue}%b%c %C%D'
+      'prompt' ' %F{blue}%b%c %A%B%C%D'
 
   autoload -Uz add-zsh-hook && add-zsh-hook precmd git-info
 fi
