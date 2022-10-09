@@ -7,7 +7,7 @@
 
 setopt nopromptbang prompt{cr,percent,sp,subst}
 
-zstyle ':zim:prompt-pwd' git-root yes
+zstyle ':zim:prompt-pwd' git-root no 
 
 typeset -gA git_info
 if (( ${+functions[git-info]} )); then
@@ -21,5 +21,5 @@ if (( ${+functions[git-info]} )); then
   autoload -Uz add-zsh-hook && add-zsh-hook precmd git-info
 fi
 
-PS1='%B%(?:%F{green}%{%G✓%}:%F{red}%{%G✗%})%f %(!:%F{magenta}:%F{gray})%n%f@%m: %F{black}$(prompt-pwd)${(e)git_info[prompt]}%f%b '
+PS1='%B%(?:%F{green}%{%G✓%}:%F{red}%{%G✗%})%f %(!:%F{magenta}:%F{gray})%n%f@%m %F{black}$(prompt-pwd)${(e)git_info[prompt]}%f%b '
 unset RPS1
