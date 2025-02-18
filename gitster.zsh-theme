@@ -44,5 +44,5 @@ _prompt_status() {
   print -n "%(?:%F{green}%{%G↪%} 0:%F{red}%{%G↪%} %?)%f"
 }
 
-PS1='$(_prompt_status) $(_prompt_user)@$(_prompt_host) %F{black}$(prompt-pwd)${(e)git_info[prompt]}%f '
+PS1='%B$(_prompt_status) $(_prompt_user)@$(_prompt_host) %F{black}$(prompt-pwd)${(e)git_info[prompt]}%f%b '
 unset RPS1
